@@ -1,4 +1,18 @@
+# 1. Dependencias (Lo más pesado, nunca se sube)
 node_modules/
+
+# 2. Archivos compilados (El resultado de tu código TS)
 dist/
+out/
+build/
+
+# 3. Variables de entorno (Configuraciones sensibles/secretas)
 .env
-*.js
+
+# 4. Archivos del sistema y editores
+.DS_Store
+.vscode/
+.idea/
+
+# 5. Logs de errores
+*.log
