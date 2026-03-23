@@ -189,3 +189,5 @@ switch (userRole) {
     console.log("Read Only");
     break;
 }
+
+//Esto es una prueba para ver que todo funcione (:
