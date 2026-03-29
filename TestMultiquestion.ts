@@ -102,36 +102,104 @@
 
 //5.
 
-class Copier {
-  private paper: number = 0;
-  private copies: number = 0;
+// class Copier {
+//   private paper: number = 0;
+//   private copies: number = 0;
 
-  public SetPaper(paper: number): void {
-    this.paper = paper;
+//   public SetPaper(paper: number): void {
+//     this.paper = paper;
+//   }
+
+//   public SetCopies(copies: number): void {
+//     this.copies = copies;
+//   }
+
+//   public Copy(text: string): void {
+//     for (let i = 0; i < this.copies; i++) {
+//       if (!this.CheckPaper()) break;
+//       console.log(text);
+//       this.paper--;
+//     }
+//   }
+
+//   public CheckPaper(): boolean {
+//     return this.paper > 0;
+//   }
+// }
+
+// const xerox: Copier = new Copier();
+
+// xerox.SetPaper(5);
+// xerox.SetCopies(3);
+// xerox.Copy("77");
+// console.log(xerox.CheckPaper() ? "Sufficient paper" : "Not enough paper");
+// xerox.Copy("44");
+// console.log(xerox.CheckPaper() ? "Sufficient paper" : "Not enough paper");
+
+//Inheritance
+
+//1.
+// class Cabinet {
+//   protected capacity:number = 0;
+
+//   public SetCapacity(capacity: number): void {
+//     this.capacity = capacity;
+//   }
+
+//   public GetCapacity(): number | string {
+//     return this.capacity > 0 ? this.capacity : "No capacity";
+//   }
+// }
+
+// class Refrigerator extends Cabinet {
+
+//   protected temperature:number = 19.0
+
+//   public SetTemperature(temperature: number): void {
+//     this.temperature = temperature;
+//   }
+
+//   public GetTemperature(): number | string {
+//     return this.temperature > 0 ? this.temperature : "No temperature set up";
+//   }
+// }
+
+// const amica: Refrigerator = new Refrigerator()
+
+// amica.SetCapacity(25)
+// amica.SetTemperature(3)
+// console.log(amica.GetCapacity())
+// console.log(amica.GetTemperature())
+
+//2.
+
+class Lamp {
+  public watt: number = 75;
+  public lumens: number = 900;
+
+  public GetLumens(): number | string {
+    return this.lumens > 0 ? this.lumens : "No lumens";
   }
-
-  public SetCopies(copies: number): void {
-    this.copies = copies;
-  }
-
-  public Copy(text: string): void {
-    for (let i = 0; i < this.copies; i++) {
-      if (!this.CheckPaper()) break;
-      console.log(text);
-      this.paper--;
-    }
-  }
-
-  public CheckPaper(): boolean {
-    return this.paper > 0;
+  
+  public SetWatt(newWatt: number): void {   
+    this.lumens = newWatt * 12; 
   }
 }
 
-const xerox: Copier = new Copier();
+class LEDLamp extends Lamp {
+  public GetWatt(): number | string {
+    return this.watt > 0 ? this.watt : "No wattage";
+  }
 
-xerox.SetPaper(5);
-xerox.SetCopies(3);
-xerox.Copy("77");
-console.log(xerox.CheckPaper() ? "Sufficient paper" : "Not enough paper");
-xerox.Copy("44");
-console.log(xerox.CheckPaper() ? "Sufficient paper" : "Not enough paper");
+  public SetWatt(newWatt: number): void {   
+    this.lumens = newWatt * 70; 
+  }
+}
+
+const luce: Lamp = new Lamp();
+const phoenix: LEDLamp = new LEDLamp();
+
+luce.SetWatt(30)
+phoenix.SetWatt(30)
+console.log(luce.GetLumens())
+console.log(phoenix.GetLumens())
