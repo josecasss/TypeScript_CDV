@@ -46,45 +46,92 @@
 
 //3.
 
-class Card {
- private credit: number = 100;
+// class Card {
+//  private credit: number = 100;
 
- public Pay(ammount:number):void
-{
-  this.credit -= ammount;
-}
-
- public getBalance():number
-{
-  return this.credit;
-}
-}
-
-const visa: Card = new Card();
-const master: Card = new Card();
-
-
-visa.Pay(30);
-master.Pay(40);
-
-console.log(`Visa balance: ${visa.getBalance()}€`);
-console.log(`Master balance: ${master.getBalance()}€`);
-
-// class Car
+//  public Pay(ammount:number):void
 // {
-// private fuel:number;
-
-// constructor()
-// {
-// this.fuel=0;
+//   this.credit -= ammount;
 // }
 
-// public addFuel(extraFuel:number):void
+//  public getBalance():number
 // {
-// this.fuel+=extraFuel;
+//   return this.credit;
+// }
 // }
 
-// public getFuel():number
-// {
-// return this.fuel;
+// const visa: Card = new Card();
+// const master: Card = new Card();
+
+// visa.Pay(30);
+// master.Pay(40);
+
+// console.log(`Visa balance: ${visa.getBalance()}€`);
+// console.log(`Master balance: ${master.getBalance()}€`);
+
+//4.
+
+// class Balance {
+//   private right: number = 0;
+//   private left: number = 0;
+
+//   public OnRight(Pright: number) {
+//     this.right = Pright;
+//   }
+
+//   public OnLeft(Pleft: number) {
+//     this.left = Pleft;
+//   }
+
+//   public IsBalanced(): boolean {
+//     if (this.right === this.left) {
+//       return true;
+//     }
+//     return false;
+//   }
 // }
+
+// const myBalance:Balance = new Balance();
+
+// myBalance.OnRight(10)
+// myBalance.OnLeft(12)
+// myBalance.OnLeft(10)
+
+// const result = myBalance.IsBalanced() ? "Yes, balanced." : "No, it is not balanced.";
+// console.log(result);
+
+//5.
+
+class Copier {
+  private paper: number = 0;
+  private copies: number = 0;
+
+  public SetPaper(paper: number): void {
+    this.paper = paper;
+  }
+
+  public SetCopies(copies: number): void {
+    this.copies = copies;
+  }
+
+  public Copy(text: string): void {
+    for (let i = 0; i < this.copies; i++) {
+      if (!this.CheckPaper()) break;
+      console.log(text);
+      this.paper--;
+    }
+  }
+
+  public CheckPaper(): boolean {
+    return this.paper > 0;
+  }
+}
+
+const xerox: Copier = new Copier();
+
+xerox.SetPaper(5);
+xerox.SetCopies(3);
+xerox.Copy("77");
+console.log(xerox.CheckPaper() ? "Sufficient paper" : "Not enough paper");
+xerox.Copy("44");
+console.log(xerox.CheckPaper() ? "Sufficient paper" : "Not enough paper");
