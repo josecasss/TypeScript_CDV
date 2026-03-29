@@ -173,33 +173,83 @@
 
 //2.
 
-class Lamp {
-  public watt: number = 75;
-  public lumens: number = 900;
+// class Lamp {
+//   public watt: number = 75;
+//   public lumens: number = 900;
 
-  public GetLumens(): number | string {
-    return this.lumens > 0 ? this.lumens : "No lumens";
-  }
-  
-  public SetWatt(newWatt: number): void {   
-    this.lumens = newWatt * 12; 
-  }
-}
+//   public GetLumens(): number | string {
+//     return this.lumens > 0 ? this.lumens : "No lumens";
+//   }
 
-class LEDLamp extends Lamp {
-  public GetWatt(): number | string {
-    return this.watt > 0 ? this.watt : "No wattage";
-  }
+//   public SetWatt(newWatt: number): void {
+//     this.lumens = newWatt * 12;
+//   }
+// }
 
-  public SetWatt(newWatt: number): void {   
-    this.lumens = newWatt * 70; 
-  }
-}
+// class LEDLamp extends Lamp {
+//   public GetWatt(): number | string {
+//     return this.watt > 0 ? this.watt : "No wattage";
+//   }
 
-const luce: Lamp = new Lamp();
-const phoenix: LEDLamp = new LEDLamp();
+//   public SetWatt(newWatt: number): void {
+//     this.lumens = newWatt * 70;
+//   }
+// }
 
-luce.SetWatt(30)
-phoenix.SetWatt(30)
-console.log(luce.GetLumens())
-console.log(phoenix.GetLumens())
+// const luce: Lamp = new Lamp();
+// const phoenix: LEDLamp = new LEDLamp();
+
+// luce.SetWatt(30)
+// phoenix.SetWatt(30)
+// console.log(luce.GetLumens())
+// console.log(phoenix.GetLumens())
+
+//3.
+
+// class Heater {
+//   public watt: number = 0;
+
+//   public SetWatt(watt: number): void {
+//     this.watt = watt;
+//   }
+
+//   public GetWatt(): number | string {
+//     return this.watt > 0 ? this.watt : "No wattage";
+//   }
+// }
+
+// class Kettle extends Heater {
+//   public liters: number = 0.0;
+
+//   constructor(liters: number, watt: number) {
+//     super();
+//     this.liters = liters;
+//     this.watt = watt;
+//   }
+
+//   public GetLiters(): number | string {
+//     return this.liters > 0 ? this.liters : "No liters";
+//   }
+// }
+
+// class Iron extends Heater {
+//   public temp: number = 0.0;
+//   constructor(temp: number, watt: number) {
+//     super();
+//     this.temp = temp;
+//     this.watt = watt;
+//   }
+
+//   public GetTemp(): number | string {
+//     return this.temp > 0 ? this.temp : "No temperature";
+//   }
+// }
+
+// const edenberg: Kettle = new Kettle(1.7, 1800);
+// const philips: Iron = new Iron(190, 900);
+
+// console.log(`Edenberg kettle: ${edenberg.GetLiters()} liters, ${edenberg.GetWatt()} watts`);
+// console.log(`Philips iron: ${philips.GetTemp()} °C, ${philips.GetWatt()} watts`);
+
+//4.
+
