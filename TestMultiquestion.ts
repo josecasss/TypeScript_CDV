@@ -253,3 +253,103 @@
 
 //4.
 
+// interface Inflatable {
+//   SetPressure(pressure: number): void;
+//   GetPressure(): number | string;
+// }
+
+// class SoccerBall implements Inflatable {
+//   public number: number = 0;
+//   public pressure: number = 0;
+
+//   constructor(public ballNumber: number) {}
+
+//   SetPressure(pressure: number): void {
+//     this.pressure = pressure;
+//   }
+//   GetPressure(): number | string {
+//     return this.pressure > 0 ? this.pressure : "No pressure";
+//   }
+// }
+
+// class RugbyBall implements Inflatable {
+//   public length: number = 0;
+//   public circumference: number = 0;
+//   public inflation: number = 0;
+
+//   constructor(
+//     public Length: number,
+//     public Circumference: number,
+//   ) {}
+
+//   SetPressure(pressure: number): void {
+//     this.inflation = pressure;
+//   }
+//   GetPressure(): number | string {
+//     return this.inflation > 0 ? this.inflation : "No pressure";
+//   }
+// }
+
+// const brazuca: SoccerBall = new SoccerBall(5);
+// const gilbert: RugbyBall = new RugbyBall(28, 60);
+
+// brazuca.SetPressure(11);
+// gilbert.SetPressure(10);
+// console.log(gilbert.GetPressure());
+// console.log(brazuca.GetPressure());
+
+//5.
+
+interface Fuel {
+  SetFuel(ammount: number): void;
+  GetFuel(): number | string;
+}
+
+interface Gas {
+  SetGas(ammount: number): void;
+  GetGas(): number | string;
+}
+
+class Engine {
+  public power: number = 0;
+  public SetPower(power: number): void {
+    this.power = power;
+  }
+}
+
+class Car extends Engine implements Fuel, Gas {
+
+    public gasAmmount: number = 0;
+    public fuelAmmount: number = 0;
+
+  SetFuel(ammount: number): void {
+    this.fuelAmmount = ammount;
+  }
+  GetFuel(): number | string {
+    return this.fuelAmmount;
+  }
+
+  SetGas(ammount: number): void {
+    this.gasAmmount = ammount;
+  }
+
+  GetGas(): number | string {
+    return this.gasAmmount;
+  }
+}
+
+class Bus extends Car {
+  public passengers: number = 0;
+
+  SetPassengers(count: number): void {
+    this.passengers = count;
+  }
+}
+
+const bus: Bus = new Bus();
+
+bus.SetFuel(45)
+bus.SetGas(300)
+bus.SetPassengers(45)
+bus.SetPower(290)
+console.log(bus.GetGas())
