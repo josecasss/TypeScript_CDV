@@ -46,12 +46,19 @@ console.log(sum(5, 7));
 
 // 3. Void: Create a function 'logMessage' that receives a string and prints it to the console (returns void).
 
+const logMessage = (message: string): void => {
+  console.log(message);
+}
+
+logMessage("Hello, TypeScript!");
 
 // 4. Arrow Function: Convert the 'sum' function from exercise 2 into a modern arrow function.
 
+const sumArrow = (a: number, b: number): number => a + b;
+
+console.log(sumArrow(10, 15));
 
 // 5. String Manipulation: Create a function 'getLength' that returns the number of characters in a string.
-
 
 // 6. Boolean Logic: Create a function 'isEven' that returns true if a number is even, false otherwise.
 
